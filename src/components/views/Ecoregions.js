@@ -7,9 +7,7 @@ import { Grid } from '@material-ui/core';
 import { Outlet } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-
-  }
+  root: {},
 }));
 
 export default function Ecoregions() {
@@ -20,7 +18,6 @@ export default function Ecoregions() {
   const LAYER_ID = `ecoregionsLayer`;
 
   useEffect(() => {
-
     // Add the source
     dispatch(
       addSource({
@@ -37,7 +34,7 @@ export default function Ecoregions() {
         source: SOURCE_ID,
       })
     );
-    
+
     // Cleanup
     return function cleanup() {
       dispatch(removeLayer(LAYER_ID));
@@ -46,4 +43,4 @@ export default function Ecoregions() {
   }, [dispatch, SOURCE_ID, LAYER_ID]);
 
   return <Outlet />;
-};
+}

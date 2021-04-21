@@ -12,7 +12,7 @@ export const initialState = {
   basemap: POSITRON,
   credentials: {
     username: 'kyle-se',
-    apiKey: 'Cx2xrtVODgcHTDy2I6_ZBw',
+    apiKey: '',
     serverUrlTemplate: 'https://{user}.carto.com',
   },
   googleApiKey: '', // only required when using a Google Basemap

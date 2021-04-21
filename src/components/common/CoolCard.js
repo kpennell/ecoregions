@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
-import {  setModalOpen} from 'config/appSlice';
+import { setModalOpen } from 'config/appSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import CloseIcon from '@material-ui/icons/Close';
 import { IconButton } from '@material-ui/core';
@@ -36,8 +36,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     },
   },
   media: {
-
-    minWidth:260,
+    minWidth: 260,
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: spacing(-3),
@@ -66,7 +65,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
   content: {
     padding: 24,
-    fontSize:30
+    fontSize: 30,
   },
   cta: {
     marginTop: 24,
@@ -78,16 +77,14 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     top: '-5%',
     backgroundColor: 'lightgray',
     color: 'gray',
-    borderRadius:"50%"
+    borderRadius: '50%',
   },
-  header:{
-    fontSize:'2.00rem'
-
+  header: {
+    fontSize: '2.00rem',
   },
-  bodyText:{
-    fontSize:'.975rem'
-
-  }
+  bodyText: {
+    fontSize: '.975rem',
+  },
 }));
 
 export const CoolCard = React.memo(function BlogCard() {
@@ -95,10 +92,7 @@ export const CoolCard = React.memo(function BlogCard() {
   const modalOpen = useSelector((state) => state.app.modalOpen);
   const dispatch = useDispatch();
 
-  const {
-    button: buttonStyles,
-    ...contentStyles
-  } = useBlogTextInfoContentStyles();
+  const { button: buttonStyles, ...contentStyles } = useBlogTextInfoContentStyles();
   const handleModalToggle = () => {
     dispatch(setModalOpen(!modalOpen));
   };
@@ -106,8 +100,6 @@ export const CoolCard = React.memo(function BlogCard() {
 
   return (
     <Card className={cx(styles.root, shadowStyles.root)}>
-    
-
       <CardMedia
         className={styles.media}
         image={
@@ -115,32 +107,58 @@ export const CoolCard = React.memo(function BlogCard() {
         }
       />
       <CardContent>
-          <Typography gutterBottom variant="h3" component="h2" className={styles.header}>
-            What are Ecoregions?
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p"  className={styles.bodyText}>
-          <a href='https://www.epa.gov/eco-research/ecoregions'>The EPA defines ecoregions</a> as areas where ecosystems (and the type, quality, and quantity of environmental resources) are generally similar. 
-          <br /> <br />This ecoregion framework was originally created by <a href='https://pubmed.ncbi.nlm.nih.gov/25223620/'> James Omernik in 1987</a> and has since been built upon and mapped by EPA regional offices, other Federal agencies, state resource management agencies, and neighboring North American countries. 
-          <br /><br /> Designed to serve as a spatial framework for the research, assessment, and monitoring of ecosystems and ecosystem components, ecoregions denote areas of similarity in the mosaic of biotic, abiotic, terrestrial, and aquatic ecosystem components with humans being considered as part of the biota.
-          </Typography><br />
-          <Typography variant="body2" color="textSecondary" component="p"  className={styles.bodyText}>This page was made by <a href='https://www.kyleapennell.com'>Kyle Pennell</a> using <a href='https://www.carto.com'>CARTO</a> as a way to help people learn about the ecoregions of California.</Typography>
+        <Typography gutterBottom variant='h3' component='h2' className={styles.header}>
+          What are Ecoregions?
+        </Typography>
+        <Typography
+          variant='body2'
+          color='textSecondary'
+          component='p'
+          className={styles.bodyText}
+        >
+          <a href='https://www.epa.gov/eco-research/ecoregions'>
+            The EPA defines ecoregions
+          </a>{' '}
+          as areas where ecosystems (and the type, quality, and quantity of environmental
+          resources) are generally similar.
+          <br /> <br />
+          This ecoregion framework was originally created by{' '}
+          <a href='https://pubmed.ncbi.nlm.nih.gov/25223620/'>
+            {' '}
+            James Omernik in 1987
+          </a>{' '}
+          and has since been built upon and mapped by EPA regional offices, other Federal
+          agencies, state resource management agencies, and neighboring North American
+          countries.
           <br />
-          <Typography variant="body2" color="textSecondary" component="p"  className={styles.bodyText}>The images come from Flickr Creative Commons images.</Typography>
-       
+          <br /> Designed to serve as a spatial framework for the research, assessment,
+          and monitoring of ecosystems and ecosystem components, ecoregions denote areas
+          of similarity in the mosaic of biotic, abiotic, terrestrial, and aquatic
+          ecosystem components with humans being considered as part of the biota.
+        </Typography>
+        <br />
+        <Typography
+          variant='body2'
+          color='textSecondary'
+          component='p'
+          className={styles.bodyText}
+        >
+          This page was made by <a href='https://www.kyleapennell.com'>Kyle Pennell</a>{' '}
+          using <a href='https://www.carto.com'>CARTO</a> as a way to help people learn
+          about the ecoregions of California.
+        </Typography>
+        <br />
+        <Typography
+          variant='body2'
+          color='textSecondary'
+          component='p'
+          className={styles.bodyText}
+        >
+          The images come from Flickr Creative Commons images.
+        </Typography>
       </CardContent>
     </Card>
   );
 });
 
-export default CoolCard
-
-
-// <TextInfoContent
-// classes={contentStyles}
-// overline={'About this site'}
-// heading={'What is an Ecoregion?'}
-// body={
-//   'Ecoregions are areas where ecosystems (and the type, quality, and quantity of environmental resources) are generally similar. This ecoregion framework is derived from Omernik (1987) and from mapping done in collaboration with EPA regional offices, other Federal agencies, state resource management agencies, and neighboring North American countries. Designed to serve as a spatial framework for the research, assessment, and monitoring of ecosystems and ecosystem components, ecoregions denote areas of similarity in the mosaic of biotic, abiotic, terrestrial, and aquatic ecosystem components with humans being considered as part of the biota.'
-// }
-// />
-// <Button className={buttonStyles} onClick={handleModalToggle}>Explore the Map</Button>
+export default CoolCard;
